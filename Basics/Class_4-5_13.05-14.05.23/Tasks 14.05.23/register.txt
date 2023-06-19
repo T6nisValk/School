@@ -1,0 +1,3 @@
+name age city amount_of_potatoes 
+tõnis 32 32 3 name age city amount_of_potatoes 
+est stse gse g 

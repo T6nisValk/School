@@ -1,0 +1,33 @@
+"""
+Create a program for Cataloguing Movies.
+
+1. I should be able to create a movie record.
+- Each movie should have a title, imdb rating, release year.
+
+2. I should be able to add Movies to MoviesIHaveSeen list.
+- When registering movie to the list I want to be able
+    to provide my personal rating 0-10.
+
+3. There should be an option to delete last movie
+from the MoviesIHaveSeen. OR
+- 3.1 if the id of the movie is provided remove a that movie.
+
+4. There should be options to show all created movies list
+and MoviesIHaveSeen list.
+
+5. After the program terminates both MoviesIHaveSeen  list
+and all created movies should be saved into separate files.
+
+6. At the start of the program the program should read the
+files to catch up on what was done before.
+
+Example of testing file operations:
+def writetoafile(fname):
+    with open(fname, 'w') as fp:
+        fp.write('Hello\n')
+
+
+
+**Basically do the same but pass the test file a tmpdir fixture,
+that does not need to be defined as it is built-in to pytest
+"""

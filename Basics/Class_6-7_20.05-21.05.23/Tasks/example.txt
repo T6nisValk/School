@@ -1,0 +1,5 @@
+id name age city potato 
+1 tõnis 21 tartu 4
+2 uhuhuh 3 djzdlghx 4
+3 tõnis 33 kollane 3
+4 koer 3232 kekekeke 5
