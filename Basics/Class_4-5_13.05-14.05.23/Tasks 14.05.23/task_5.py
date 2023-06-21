@@ -6,7 +6,7 @@
 from statistics import mean
 list_of_lines = []
 list_of_line_averages = []
-with open("numbers.txt") as f:
+with open("Basics\Class_4-5_13.05-14.05.23\Tasks 14.05.23\numbers.txt") as f:
     for lines in f.readlines():
         # Line check to run the program again, skips lines that are already appended.
         if lines.startswith("Average"):
