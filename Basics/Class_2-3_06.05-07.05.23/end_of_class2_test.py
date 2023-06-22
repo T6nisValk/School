@@ -18,7 +18,8 @@ else:
 # Get a text and just assign it to a string variable in the program.
 
 random_text = "Cupcake ipsum dolor sit amet. I love caramels topping soufflé I love"
-for index, char in enumerate(random_text): # Enumerate lists the index and value of list
+# Enumerate lists the index and value of list
+for index, char in enumerate(random_text):
     if (index + 1) % 3 == 0:
         print(char.upper(), end="")
     elif (index + 1) % 4 == 0:
@@ -123,12 +124,13 @@ while True:
     user_input = input("What would you like to do?\n"
                        "To register a new user, enter REGISTER,\n"
                        "To display current user, enter DISPLAY.\n"
-                       "To quit the program, enter QUIT. \n" )
+                       "To quit the program, enter QUIT. \n")
     if user_input.upper() == "REGISTER":
         user["name"] = input("Enter your name: ")
         user["age"] = int(input("Enter your age: "))
         user["city"] = input("Enter your city: ")
-        user["amount_of_potatoes"] = input("How may potatoes did you eat yesterday?: ")
+        user["amount_of_potatoes"] = input(
+            "How may potatoes did you eat yesterday?: ")
         print("Thanks for registering!")
         continue
     elif user_input.upper() == "DISPLAY":

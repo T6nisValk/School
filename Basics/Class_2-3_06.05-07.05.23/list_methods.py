@@ -12,8 +12,10 @@ fruits.extend(["Dragonfruit", "Some other fruit"])
 print(f"\nLength of the list after appending {fruits}: {len(fruits)}")
 
 # Sorts by alphabet or numbers sorted()
-print(f"Current state of the list: {sorted(fruits)}")  # Sorts the values only for this print.
-sorted_fruits = sorted(fruits)  # Stores the sorted value in a different variable, original remains unsorted
+# Sorts the values only for this print.
+print(f"Current state of the list: {sorted(fruits)}")
+# Stores the sorted value in a different variable, original remains unsorted
+sorted_fruits = sorted(fruits)
 # fruits.sort()  # Sorts the values in the variable
 print(f"Current state of the list: {fruits}")
 print(f"Current state of the list after sorting: {sorted_fruits}")
@@ -23,7 +25,8 @@ print("\nCounts the given values in a list", fruits.count("Orange"))
 # .index(x)
 print("Index", fruits.index("Pear"))
 # .insert(index, x)
-fruits.insert(2, "Another Pear")  # Inserts a new value to the given index, moving everything else up by one index
+# Inserts a new value to the given index, moving everything else up by one index
+fruits.insert(2, "Another Pear")
 print(fruits)
 # .pop(index)
 fruits.pop(2)  # Delete the value at an index
@@ -41,4 +44,3 @@ print(fruits)
 # .clear()
 fruits.clear()  # Deletes all values from the list
 print(fruits)
-

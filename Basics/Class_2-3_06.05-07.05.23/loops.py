@@ -28,7 +28,6 @@ for animal in animals:
     print(f"{animal} is in index {animals.index(animal)}")
 
 
-
 x = 0
 while x < len(animals):
     print(animals[x])
