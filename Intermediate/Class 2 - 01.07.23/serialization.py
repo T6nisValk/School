@@ -1,5 +1,6 @@
 import csv
-filename = 'Intermediate\Class 2-3 - 01.07-02.7.23\student.csv'
+
+filename = 'student.csv'
 # Read from .CSV
 with open(filename) as f:
     reader = csv.reader(f)
@@ -20,12 +21,12 @@ record = [
     ["Spinach", 1, 2.30],
     ["Black plums", 10, 4.99]
 ]
-filename = "Intermediate\Class 2-3 - 01.07-02.7.23\groceries_a.csv"
+filename = "groceries_a.csv"
 with open(filename, "w", newline="") as f:
     writer = csv.writer(f)
     for row in record:
         writer.writerow(row)
-filename = "Intermediate\Class 2-3 - 01.07-02.7.23\groceries_b.csv"
+filename = "groceries_b.csv"
 with open(filename, "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerows(record)  # Any iterable
