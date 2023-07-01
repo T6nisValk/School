@@ -1,5 +1,6 @@
-from copy import deepcopy, copy
+from copy import deepcopy
 from dataclass import Book
+
 book1 = Book("Try again", "Value", 2021)
 original_list = ["Apple", "Pear", book1]
 
