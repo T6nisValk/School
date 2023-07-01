@@ -15,8 +15,7 @@ class Book:
         self.name = name
 
     def is_new_book(self, current):
-
-        return True if current-self.year < 5 else False
+        return True if current - self.year < 5 else False
 
 
 @dataclass  # Import it from dataclasses
