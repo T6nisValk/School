@@ -1,0 +1,70 @@
+{
+  "Man city": [
+    {
+      "forwards": [
+        {
+          "name": "Alvarez",
+          "number": 21,
+          "goals": 6,
+          "assist": 7
+        },
+        {
+          "name": "Someone",
+          "number": 555,
+          "goals": 2,
+          "assist": 7
+        },
+        {
+          "name": "Someonelse",
+          "number": 33,
+          "goals": 2,
+          "assist": 4
+        }
+      ]
+    },
+    {
+      "midfield": [
+        {
+          "name": "Alvarez",
+          "number": 21,
+          "goals": 6,
+          "assist": 7
+        },
+        {
+          "name": "Someone",
+          "number": 555,
+          "goals": 2,
+          "assist": 7
+        },
+        {
+          "name": "Someonelse",
+          "number": 33,
+          "goals": 2,
+          "assist": 4
+        }
+      ]
+    },
+    {
+      "something": [
+        {
+          "name": "Alvarez",
+          "number": 21,
+          "goals": 6,
+          "assist": 7
+        },
+        {
+          "name": "Someone",
+          "number": 555,
+          "goals": 2,
+          "assist": 7
+        },
+        {
+          "name": "Someonelse",
+          "number": 33,
+          "goals": 2,
+          "assist": 4
+        }
+      ]
+    }
+  ]
+}
