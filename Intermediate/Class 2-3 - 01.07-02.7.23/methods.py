@@ -43,7 +43,13 @@ class Weight:
     def convert_to_kg(cls, weight_kg):
         return weight_kg / 2.205
 
+    @staticmethod
+    def info():
+        print("This is a static method example:\n"
+              "<This class computes BMI>")
+
 
 mina = Weight(75, 1.83)
 print(mina.bmi())
 print(Weight.convert_to_pounds(mina.weight))
+Weight.info()

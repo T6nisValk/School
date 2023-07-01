@@ -12,3 +12,13 @@
 - It is useful when you need a method that is not specific to an instance but involves the class somehow
 - To call a class method, use "`class.methodname`". You don't create an object of the class.
 ## Static methods
+- It can not access instance or class data directly
+- Has no idea about the instance or the class they are called on
+- It is marked with "`@staticmethod`" decorator
+- It does not have a specific first parameter - acts as a normal function within the class
+- It is usually used as an utility method, that is related to the class
+## Class ordering
+1. Class definition
+2. Class variables
+3. Class constructor
+4. Class methods
