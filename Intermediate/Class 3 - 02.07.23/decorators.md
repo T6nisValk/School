@@ -29,12 +29,35 @@ def decorator_function_name(func):
     def wrapper_function():
         return func + 5  # Do something
 
-    return wrapper_function()
+    return wrapper_function
 
 
 # To use a decorator syntax:
 @decorator_function_name
 def my_function():
+    pass
+
+````
+
+# Decorators with arguments
+
+To create a decorator that gets an argument, you need to create a function that returns a
+decorator rather than writing the decorator directly.
+
+````python
+def function_that_returns_decorator(*arguments):
+    def decorator_function_name(func):
+        def wrapper_function():
+            print({arguments})
+            func()  # Do something
+
+        return wrapper_function
+
+    return decorator_function_name
+
+
+@function_that_returns_decorator(2, 3)
+def my_func():
     pass
 
 ````
