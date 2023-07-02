@@ -39,7 +39,7 @@ def my_function():
 
 ````
 
-# Decorators with arguments
+# Decorators with arguments (`decorator_args.py`)
 
 To create a decorator that gets an argument, you need to create a function that returns a
 decorator rather than writing the decorator directly.
@@ -60,4 +60,15 @@ def function_that_returns_decorator(*arguments):
 def my_func():
     pass
 
+````
+
+# Chaining decorators (`decorator_chain.py`)
+
+Can apply more than 1 decorator to a function. Apply it from bottom to top.
+
+````python
+@decorator1
+@decorator2
+def function():
+    pass
 ````

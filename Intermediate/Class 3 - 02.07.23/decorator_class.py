@@ -29,3 +29,26 @@ def say_something(name):
 
 say_something("Someone")
 say_something("Someone Else")
+
+
+def limit_calls(max_calls):
+    num_calls = {"count": 0}
+
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            if num_calls["count"] >= max_calls:
+                raise Exception("Max amount reached")
+            num_calls["count"] += 1
+
+        return wrapper
+
+    return decorator
+
+
+@limit_calls(2)
+def my_func(name):
+    print(f"{name}")
+
+
+my_func("Hello")
