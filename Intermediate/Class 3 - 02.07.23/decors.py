@@ -50,8 +50,9 @@ backup()
 # Decorator for validation.
 def validating_non_negative_numbers(func):
     def wrapper(*args, **kwargs):
-        if any(arg < 0 for arg in args):
-            raise ValueError("All parameters must be greater than 0")
+        if any(arg < 0 for arg in args):  # Any() Returns True if any of the numbers in args are
+            # negative
+            raise ValueError("All parameters must be greater than 0")  # If True raise error
         return func(*args, *kwargs)
 
     return wrapper

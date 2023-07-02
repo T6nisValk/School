@@ -40,6 +40,7 @@ def limit_calls(max_calls):
             if num_calls["count"] >= max_calls:
                 raise Exception("Max amount reached")
             num_calls["count"] += 1
+            return func(*args, *kwargs)
 
         return wrapper
 
@@ -52,3 +53,5 @@ def my_func(name):
 
 
 my_func("Hello")
+my_func("My")
+my_func("friend")
