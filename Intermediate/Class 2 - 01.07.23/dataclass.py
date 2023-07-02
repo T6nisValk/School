@@ -38,3 +38,6 @@ print(book1.name)
 
 book2 = BookDS("Hello", "My Name", 2020)
 print(book2.is_new_book(2023))
+print(book2.name)
+book2.name = "Helllllo"
+print(book2.name)
