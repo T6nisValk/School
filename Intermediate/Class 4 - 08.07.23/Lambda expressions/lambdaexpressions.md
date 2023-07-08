@@ -5,7 +5,7 @@
   normal functions
 - Anonymous functions are defined using `lambda` keyword
 
-```python
+```
 # Regular function
 def function_name():
     pass
@@ -13,7 +13,7 @@ def function_name():
 
 ## Syntax for defining lambda functions
 
-````python
+````
 lambda arguments: expression
 ````
 

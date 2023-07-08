@@ -24,7 +24,7 @@ Examples where decorators are used:
 
 ### Syntax for a decorator (`decors.py`)
 
-````python
+````
 def decorator_function_name(func):
     def wrapper_function():
         return func + 5  # Do something
@@ -44,7 +44,7 @@ def my_function():
 To create a decorator that gets an argument, you need to create a function that returns a
 decorator rather than writing the decorator directly.
 
-````python
+````
 def function_that_returns_decorator(*arguments):
     def decorator_function_name(func):
         def wrapper_function():
@@ -66,7 +66,7 @@ def my_func():
 
 Can apply more than 1 decorator to a function. Apply it from bottom to top.
 
-````python
+````
 @decorator1
 @decorator2
 def function():
