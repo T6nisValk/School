@@ -2,7 +2,7 @@
 import math
 
 # Read file with for loop
-with open("readme.txt") as f:
+with open("file.txt") as f:
     for line in f:
         print(line, end="")
 # Iter example.
