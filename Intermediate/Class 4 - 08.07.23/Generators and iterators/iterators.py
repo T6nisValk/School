@@ -45,14 +45,14 @@ for num in MyIterable(1, 14):
 # Example Cycle
 """
 Iterate through a list or string until stopped.
-hello => return h, e, l, l, o, h, e, l, l, o ... until I tell it to stop.
+hello => return h, e, l, l, o, h, e, l, l, o ... .
 """
 
 
 class CycleIterable:
-    def __init__(self, value):
-        self.value = iter(value)
-        self.iterable = value
+    def __init__(self, val):
+        self.value = iter(val)
+        self.iterable = val
 
     def __iter__(self):
         return self
