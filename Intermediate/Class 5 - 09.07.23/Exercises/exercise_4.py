@@ -1,6 +1,6 @@
 import re
 
-filename = "Intermediate\Class 5 - 09.07.23\Exercises\\text.txt"
+filename = "text.txt"
 with open(filename) as f:
     data = f.read()
 

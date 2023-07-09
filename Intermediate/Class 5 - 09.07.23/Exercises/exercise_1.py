@@ -1,6 +1,7 @@
 import gzip
 import re
-filename = "Intermediate\Class 5 - 09.07.23\Exercises\\aspell_en_CA.txt.gz"
+
+filename = "aspell_en_CA.txt.gz"
 pattern = r"\b[a-zA-Z]{3}\b"
 with gzip.open(filename, mode="rt") as f:
     for word in f:
