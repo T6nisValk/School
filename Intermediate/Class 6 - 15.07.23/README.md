@@ -46,4 +46,21 @@ Where:
 
 - stmt is the block of code you want to measure the execution time.
 - setup is things required before executing the statement.
-- number is the number of times your code runs. 
+- number is the number of times your code runs.
+
+# Encapsulation
+
+It describes the idea of wrapping data and underlining methods within one unit. It basically
+means data hiding. Prevents accidental modification of data.
+
+Access modifiers:
+
+- Public - Everyone has access.
+- Private - Within the class only.
+- Protected - Within the class and through inheritance.
+
+Encapsulation is possible in Python with name mangling. If class attributes are prefixed with
+double underscore `__`, Python will mangle the object name to prevent direct access from outside the
+class.
+
+You can modify the private variables through getter and setter.
