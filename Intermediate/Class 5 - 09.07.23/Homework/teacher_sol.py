@@ -16,7 +16,7 @@ data_log_list = []
 
 with open('logs.txt', 'rt') as f:
     for line in f:
-        match = re.match(r"(\d{2}/\d{2}) (\d{2}:\d{2}:\d{2})\s+(\w+)\s+:(\.*\w+):\s+(.*)", line)
+        match = re.match(r"(\d{2}/\d{2}) (\d{2}:\d{2}:\d{2})\s+(\w+)\s*:(\.*\w+):\s+(.*)", line)
         if match:
             data = LogData(*match.groups())
             data_log_list.append(data)
