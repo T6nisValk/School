@@ -1,3 +1,4 @@
+# Solution 1
 def create_phone_number(numbers):
     if len(numbers) == 11:
         phone = f"+{numbers[0]}{numbers[1]} " \
@@ -9,6 +10,7 @@ def create_phone_number(numbers):
         return "Wrong amount of numbers."
 
 
+# Solution 2
 def create_phone(numbers):
     if len(numbers) == 11:
         numbers = [str(num) for num in numbers]
