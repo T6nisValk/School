@@ -9,7 +9,6 @@ def likes(names):
         print(f"{names[0]}, {names[1]} and {len(names) - 2} other people like it!")
     else:
         print("Nobody likes it..")
-    pass
 
 
 likes([])
