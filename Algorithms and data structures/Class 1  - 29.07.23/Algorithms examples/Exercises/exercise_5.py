@@ -25,12 +25,8 @@ def decode_morse(morse):
     list_of_word_letters = [["".join([MORSE_CODE.get(s) for s in word])] for word in
                             list_of_morse_word_letters]
     # Get the letters from list of word letters
-    result = []
-    for list_ in list_of_word_letters:
-        for word in list_:
-            result.append(f" {word}")
-    # Join the letters and then the words, remove leading space
-    result = "".join(result).lstrip()
+    result = "".join(
+        ["".join([f" {word}" for word in list_]) for list_ in list_of_word_letters]).lstrip()
     return result
 
 
