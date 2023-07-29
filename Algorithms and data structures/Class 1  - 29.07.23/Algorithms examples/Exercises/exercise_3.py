@@ -1,7 +1,7 @@
 # Solution 1
 def create_phone_number(numbers):
     if len(numbers) == 11:
-        phone = f"+{numbers[0]}{numbers[1]} " \
+        phone = f"+({numbers[0]}{numbers[1]}) " \
                 f"{numbers[2]}{numbers[3]}{numbers[4]}-" \
                 f"{numbers[5]}{numbers[6]}{numbers[7]}-" \
                 f"{numbers[8]}{numbers[9]}{numbers[10]}"
@@ -14,10 +14,11 @@ def create_phone_number(numbers):
 def create_phone(numbers):
     if len(numbers) == 11:
         numbers = [str(num) for num in numbers]
-        numbers.insert(0, "+")
-        numbers.insert(3, " ")
-        numbers.insert(7, "-")
-        numbers.insert(11, "-")
+        numbers.insert(0, "+(")
+        numbers.insert(3, ")")
+        numbers.insert(4, " ")
+        numbers.insert(8, "-")
+        numbers.insert(12, "-")
     else:
         return "Wrong amount of numbers."
     return "".join(numbers)
