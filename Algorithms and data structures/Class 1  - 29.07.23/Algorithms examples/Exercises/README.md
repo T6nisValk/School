@@ -24,7 +24,7 @@ should be return as a list.
 
 Write a function that takes a list of 11 integers and returns a string in a phone number format.
 
-- ``func([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]) `` => returns ``"(+12) 345-678-901``
+- ``func([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]) `` => returns ``(+12) 345-678-901``
 
 # Exercise 4
 
