@@ -1,5 +1,3 @@
-import re
-
 MORSE_CODE = {'.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D',
               '.': 'E', '..-.': 'F', '--.': 'G', '....': 'H', '..': 'I',
               '.---': 'J', '-.-': 'K', '.-..': 'L', '--': 'M', '-.': 'N',
@@ -18,15 +16,15 @@ def decode_morse(morse):
     # Remove spaces from sides
     morse.strip()
     # Split words into a list
-    list_of_morse_words = re.split(r"\s{2}", morse)
+    morse_words = morse.split("  ")
     # Split words into letters
-    list_of_morse_word_letters = [word.split() for word in list_of_morse_words]
+    morse_letters = [word.split() for word in morse_words]
     # Convert morse to letters
-    list_of_word_letters = [["".join([MORSE_CODE.get(s) for s in word])] for word in
-                            list_of_morse_word_letters]
+    alpha_letters = [["".join([MORSE_CODE.get(s) for s in word])] for word in
+                     morse_letters]
     # Get the letters from list of word letters
     result = "".join(
-        ["".join([f" {word}" for word in list_]) for list_ in list_of_word_letters]).lstrip()
+        ["".join([f" {word}" for word in list_]) for list_ in alpha_letters]).lstrip()
     return result
 
 
