@@ -3,7 +3,7 @@ from collections import deque
 import time
 
 
-class Client:
+class Client(abc.ABC):
     def __init__(self, first_name, last_name):
         self.first_name = first_name
         self.last_name = last_name
@@ -36,8 +36,7 @@ class FiFolist:
         self.queue.append(data)
 
     def pop(self):
-        removed_client = self.queue.pop(0)
-        return removed_client
+        return self.queue.pop(0)
 
 
 class CashRegister:
@@ -46,11 +45,11 @@ class CashRegister:
 
     def add_client(self, client):
         self.queue.append(client)
-        print(f"{client} joined the queue")
+        # print(f"{client} joined the queue.")
 
     def process(self):
         client = self.queue.pop()
-        print(f"{client} has been serviced.")
+        # print(f"{client} left the store.")
 
 
 class FasterCashRegister(CashRegister):
@@ -61,42 +60,42 @@ class FasterCashRegister(CashRegister):
 
     def process(self):
         client = self.queue.popleft()
-        print(f"{client} has been serviced.")
+        # print(f"{client} has left the store.")
 
 
 client1 = Woman("Anna", "Johnson")
 client2 = Man("John", "Smith")
 client3 = Child("Chris", "Novak")
 
-cr = CashRegister()
+cr = FasterCashRegister()
 
 cr.add_client(client1)
 cr.add_client(client2)
 cr.add_client(client3)
 
-print("-" * 120)
+# print("-" * 120)
 
 cr.process()
 cr.process()
 cr.process()
 
-print("-" * 120)
+# print("-" * 120)
 
-start = time.time()
+start = time.perf_counter()
 cr = CashRegister()
-for i in range(10000):
+for i in range(100000):
     cr.add_client(client1)
-for i in range(10000):
+for i in range(100000):
     cr.process()
-end = time.time()
+end = time.perf_counter()
 
-start2 = time.time()
-cr = FasterCashRegister()
-for i in range(10000):
-    cr.add_client(client1)
-for i in range(10000):
-    cr.process()
-end2 = time.time()
+start2 = time.perf_counter()
+fcr = FasterCashRegister()
+for i in range(100000):
+    fcr.add_client(client1)
+for i in range(100000):
+    fcr.process()
+end2 = time.perf_counter()
 
 print(f"Time for normal cash register: {end - start}\n"
       f"Time for fast cash register: {end2 - start2}")

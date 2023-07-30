@@ -13,17 +13,23 @@ class BookStack:
     def all_books(self):
         return self.stack
 
-    # __add__ needs more info
     def __add__(self, other_stack):
-        new = BookStack(stack_name=self.stack_name, category=self.category)
+        new = BookStack(self.stack_name, self.category)
         new.stack = self.stack + other_stack.stack
         return new
 
-    def __gt__(self, other):
-        return len(self.stack) > len(other.stack)
+    # def __add__(self, other_stack):
+    #     new_stack = BookStack(self.stack_name, self.category)
+    #     books_to_add = self.stack + other_stack.stack
+    #     for book in books_to_add:
+    #         new_stack.add_new_book(book)
+    #     return new_stack
 
-    def __le__(self, other):
-        return len(self.stack) <= len(other.stack)
+    def __gt__(self, other_stack):
+        return len(self.stack) > len(other_stack.stack)
+
+    def __le__(self, other_stack):
+        return len(self.stack) <= len(other_stack.stack)
 
     def __str__(self):
         return f"Stack: {self.stack_name} with category of books: {self.category}"
