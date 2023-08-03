@@ -11,6 +11,9 @@ class Tank:
     def move(self, move):
         self.my_points -= 10
         if move == "FORWARD".lower():
+            print(f"--------------------\n"
+                  f"Tank moved {move}.\n"
+                  f"--------------------")
             if self.direction == "UP":
                 self.coordinates["Y"] += 1
             elif self.direction == "DOWN":
@@ -20,6 +23,9 @@ class Tank:
             elif self.direction == "LEFT":
                 self.coordinates["X"] -= 1
         elif move == "BACK".lower():
+            print(f"--------------------\n"
+                  f"Tank moved {move}.\n"
+                  f"--------------------")
             if self.direction == "UP":
                 self.coordinates["Y"] -= 1
                 self.direction = "DOWN"
@@ -33,6 +39,9 @@ class Tank:
                 self.coordinates["X"] += 1
                 self.direction = "RIGHT"
         elif move == "RIGHT".lower():
+            print(f"--------------------\n"
+                  f"Tank moved {move}.\n"
+                  f"--------------------")
             if self.direction == "UP":
                 self.coordinates["X"] += 1
                 self.direction = "RIGHT"
@@ -46,6 +55,9 @@ class Tank:
                 self.coordinates["Y"] += 1
                 self.direction = "UP"
         elif move == "LEFT".lower():
+            print(f"--------------------\n"
+                  f"Tank moved {move}.\n"
+                  f"--------------------")
             if self.direction == "UP":
                 self.coordinates["X"] -= 1
                 self.direction = "LEFT"
