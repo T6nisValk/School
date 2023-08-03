@@ -178,6 +178,9 @@ def tank_control():
                   f"You killed {target.amount_of_target_deaths} targets.\n"
                   f"Your total score: {my_tank.my_points}\n"
                   f"--------------------")
+            player_name = input("Enter your name: ")
+            with open("player_scores.txt", "a") as f:
+                f.write(f"{player_name}: {my_tank.my_points}\n")
             exit()
         player_input = input("What would you like to do?\n"
                              "To shoot with the tank, type 'shoot',\n"
@@ -220,7 +223,9 @@ def tank_control():
                 f.write(f"{player_name}: {my_tank.my_points}\n")
             break
         else:
-            print("Wrong input.")
+            print("--------------------\n"
+                  "Wrong input.\n"
+                  "--------------------")
             continue
     exit()
 
