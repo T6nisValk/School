@@ -1,4 +1,4 @@
 id name age city 
-1 Tõnis 31 Tartu
+1 Tï¿½nis 31 Tartu
 2 P2hkel 6 Tartu
 3 Merily 29 Tartu
