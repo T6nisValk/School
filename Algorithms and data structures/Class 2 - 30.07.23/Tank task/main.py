@@ -218,9 +218,6 @@ def tank_control():
             continue
         elif player_input.lower() == "exit":
             print("Thank you for playing")
-            player_name = input("Enter your name: ")
-            with open("player_scores.txt", "a") as f:
-                f.write(f"{player_name}: {my_tank.my_points}\n")
             break
         else:
             print("--------------------\n"
