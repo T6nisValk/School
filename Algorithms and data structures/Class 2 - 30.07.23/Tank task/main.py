@@ -161,11 +161,16 @@ class Target:
 
 def start_game():
     while True:
-        player_input = input("For new game, type 'new',\n"
-                             "To see scores, type 'scores'.\n")
-        if player_input.lower() == "new":
+
+        print("1 to play a new game,\n"
+              "2 to see previous scores,\n"
+              "ESC to exit the game.")
+        player_input = keyboard.read_event()
+        if player_input.name == "1" and player_input.event_type == "down":
             break
-        elif player_input.lower() == "scores":
+        elif player_input.name == "esc" and player_input.event_type == "down":
+            exit()
+        elif player_input.name == "2" and player_input.event_type == "down":
             with open("player_scores.txt") as f:
                 for line in f.readlines():
                     print(line, end="")
@@ -176,7 +181,8 @@ def tank_control():
     target = Target()
     target.spawn_target(my_tank.coordinates)
     start_game()
-    print("Welcome to the game!\n"
+    print("--------------------"
+          "Welcome to the game!\n"
           "Use the WASD keys to move the tank and space to shoot.\n"
           "1 to see player info,\n"
           "2 to see target info,\n"
