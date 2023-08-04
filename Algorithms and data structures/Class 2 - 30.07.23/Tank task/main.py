@@ -153,7 +153,7 @@ class Target:
         }
 
     def location(self):
-        print(f"\nn--------------------\n"
+        print(f"\n--------------------\n"
               f"Target is located at:\n"
               f"{self.coordinates}\n"
               f"--------------------\n")
@@ -177,7 +177,7 @@ def tank_control():
     target.spawn_target(my_tank.coordinates)
     start_game()
     print("Welcome to the game!\n"
-          "Use the arrow keys to move the tank and space to shoot.\n"
+          "Use the WASD keys to move the tank and space to shoot.\n"
           "1 to see player info,\n"
           "2 to see target info,\n"
           "3 to see your current score,\n"
@@ -211,13 +211,13 @@ def tank_control():
             continue
         elif player_input.name == "3" and player_input.event_type == "down":
             my_tank.points()
-        elif player_input.name == "up" and player_input.event_type == "down":
+        elif player_input.name == "w" and player_input.event_type == "down":
             my_tank.move("forward")
-        elif player_input.name == "down" and player_input.event_type == "down":
+        elif player_input.name == "s" and player_input.event_type == "down":
             my_tank.move("back")
-        elif player_input.name == "right" and player_input.event_type == "down":
+        elif player_input.name == "d" and player_input.event_type == "down":
             my_tank.move("right")
-        elif player_input.name == "left" and player_input.event_type == "down":
+        elif player_input.name == "a" and player_input.event_type == "down":
             my_tank.move("left")
 
         elif player_input.name == "esc" and player_input.event_type == "down":
