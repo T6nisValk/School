@@ -174,6 +174,7 @@ def start_game():
             with open("player_scores.txt") as f:
                 for line in f.readlines():
                     print(line, end="")
+                print("\n")
 
 
 def tank_control():
@@ -181,7 +182,7 @@ def tank_control():
     target = Target()
     target.spawn_target(my_tank.coordinates)
     start_game()
-    print("--------------------"
+    print("--------------------\n"
           "Welcome to the game!\n"
           "Use the WASD keys to move the tank and space to shoot.\n"
           "1 to see player info,\n"
