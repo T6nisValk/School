@@ -6,7 +6,6 @@ with open("example_reading.txt", "w+") as f:
 with open("example_reading.txt", "r") as f:
     keys = f.readline().strip("\n").split(" ")  # Splits the values with given value
 
-
     for line in f.readlines():
         user = line.strip("\n").split(" ")
 
@@ -24,11 +23,5 @@ print(users_list)
 #         f.write(f"{user['id']} {user['name']} {user['age']} {user['city']}\n")
 
 
-
-
 #  for i in users_list:
 #    print(f"User {i['name']}, aged {i['age']} lives in {i['city']}.")
-
-
-
-
