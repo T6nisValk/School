@@ -30,24 +30,24 @@ with open("stepsIn.txt") as f:
 
 
 # This part I did 11.08
-    class_counts = {}
-    class_steps = {}
+    count = {}
+    steps = {}
 
     for item in valid_participants:
-        class_value = item['class']
-        steps_value = item['steps']
+        grade = item['class']
+        steps_taken_km = item['steps']
 
-        if class_value in class_counts:
-            class_counts[class_value] += 1
-            class_steps[class_value] += steps_value
+        if grade in count:
+            count[grade] += 1
+            steps[grade] += steps_taken_km
         else:
-            class_counts[class_value] = 1
-            class_steps[class_value] = steps_value
+            count[grade] = 1
+            steps[grade] = steps_taken_km
 
     result = []
-    for class_value, count in class_counts.items():
+    for grade, count in count.items():
         result.append(
-            {'class': class_value, 'steps': class_steps[class_value], 'count': count})
+            {'class': grade, 'count': count, 'steps': steps[grade]})
 
 
 with open("stepsOUT.txt", "w") as f:
