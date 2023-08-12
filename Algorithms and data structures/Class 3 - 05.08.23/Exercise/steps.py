@@ -1,4 +1,4 @@
-# This part is older.
+
 participants = []
 valid_participants = []
 with open("stepsIn.txt") as f:
@@ -28,8 +28,6 @@ with open("stepsIn.txt") as f:
                             participant["class"]-participant["step_length"])) / 100000, 2)
         }
 
-
-# This part I did 11.08
     count = {}
     steps = {}
 
