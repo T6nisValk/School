@@ -1,5 +1,16 @@
-# Source file
+# Competition task
 
+Source file:
+````
+6
+10 10 20 15 15 20
+2 2 5 3 3 5
+Ignas 12 22 0 10 12 17
+Skirmantas 5 12 0 40 12 30
+Milda 10 10 20 22 31 23
+Asta 5 0 17 10 23 23
+Rima 8 0 14 23 12 23
+````
 1. Amount of tasks in competition
 2. Amount of time that is given for each task to be solved
 3. Max amount of points for each task
