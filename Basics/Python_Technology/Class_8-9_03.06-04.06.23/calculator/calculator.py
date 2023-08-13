@@ -3,6 +3,7 @@
 
 class Cal:
     """Calculator"""
+
     @staticmethod
     def mul(a, b):
         """Calulates the multiplication"""

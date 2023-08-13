@@ -14,6 +14,7 @@
 #     finally:
 #         print("Hello")
 
+
 class ValidationError(Exception):
     def __init__(self, message, error):
         super().__init__(message)
@@ -21,9 +22,9 @@ class ValidationError(Exception):
 
 
 try:
-    raise ValidationError("Invalid data passed",
-                          {"error1": "integer allowed",
-                           "error2": "string allowed"})
+    raise ValidationError(
+        "Invalid data passed", {"error1": "integer allowed", "error2": "string allowed"}
+    )
 except ValidationError as e:
     print(e)
     print(e.error)

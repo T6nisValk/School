@@ -1,5 +1,6 @@
 # Adding 15 to a number passed in an argument.
 
+
 def add_15(x):
     return x + 15
 
@@ -17,6 +18,7 @@ print(multiply(2, 3, 4))
 
 # Lambda functions inside normal/other functions
 
+
 def multiply_results(n):
     return lambda a: a * n
 
@@ -26,6 +28,7 @@ print(tripler(5))  # Value for a
 
 
 # Get the even numbers in a list
+
 
 def get_even(nums):
     evens = []
@@ -43,6 +46,7 @@ print(even(my_list))
 
 
 # String actions
+
 
 def yell(s):
     return s.upper()

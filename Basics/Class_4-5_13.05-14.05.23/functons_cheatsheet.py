@@ -20,6 +20,7 @@ sum_of_numbers(True, "A sum is: ", 2, 3)
 # x = lambda a, b, c : a + b + c
 # print(x(3, 4, 5))
 
+
 def multiple_arguments_named_values_assignment(num1, num2, num3, num4):
     print(f"{num1 + num2 + num3 + num4}")
 
@@ -53,7 +54,9 @@ def total_args_with_required_and_optional_arg(start, *args, end=" "):
         print(f"{start} - {text}", end=end)
 
 
-total_args_with_required_and_optional_arg("Some text", "Text1", "Text2", "Text3", "Text4")
+total_args_with_required_and_optional_arg(
+    "Some text", "Text1", "Text2", "Text3", "Text4"
+)
 print("\n")
 
 
@@ -68,7 +71,9 @@ def total_kwargs(**kwargs):  # key word arguments
 total_kwargs(eggs=5, potatoes=3, bacon_strips=2, bread=2, cheese=2)
 
 
-def total_kwargs_with_optional_arg(milk=1, **kwargs):  # Optional only works before **kwargs
+def total_kwargs_with_optional_arg(
+    milk=1, **kwargs
+):  # Optional only works before **kwargs
     result = 0
     for key, value in kwargs.items():
         print(f"{key} - {value}", end=" ")
@@ -88,9 +93,15 @@ def total_kwargs_with_required_and_optional_arg(arg1, potato=5, **kwargs):
     print(f"{arg1}: {result}", end=f" {potato} \n")
 
 
-total_kwargs_with_required_and_optional_arg("Required argument", 9, eggs=5, potatoes=3, bacon_strips=2)
-total_kwargs_with_required_and_optional_arg(arg1="Required argument", potato=9, eggs=5, potatoes=3, bacon_strips=2)
-total_kwargs_with_required_and_optional_arg(potato=9, potatoes=3, eggs=5, arg1="Required argument", bacon_strips=2)
+total_kwargs_with_required_and_optional_arg(
+    "Required argument", 9, eggs=5, potatoes=3, bacon_strips=2
+)
+total_kwargs_with_required_and_optional_arg(
+    arg1="Required argument", potato=9, eggs=5, potatoes=3, bacon_strips=2
+)
+total_kwargs_with_required_and_optional_arg(
+    potato=9, potatoes=3, eggs=5, arg1="Required argument", bacon_strips=2
+)
 
 
 def total_args_and_kwargs(*args, **kwargs):
@@ -124,8 +135,6 @@ def add(a, b):
 
 
 print(add(1, 2))
-
-
 
 
 def sum1(items):

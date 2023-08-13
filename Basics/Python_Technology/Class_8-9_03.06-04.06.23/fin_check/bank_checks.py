@@ -14,7 +14,11 @@ class FinStatus:
         self.monthly_income = monthly_income
 
     def check_fin_status(self):
-        if self.account_balance > 0 and self.debt_balance == 0 and self.monthly_income > 0:
+        if (
+            self.account_balance > 0
+            and self.debt_balance == 0
+            and self.monthly_income > 0
+        ):
             return "You are in good financial standing"
         elif self.account_balance < 0 < self.debt_balance and self.monthly_income > 0:
             return "You are in bad financial standing"

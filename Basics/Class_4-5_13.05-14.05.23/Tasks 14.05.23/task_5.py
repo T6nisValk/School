@@ -4,6 +4,7 @@
 # ----------------------------------------------------------------------------------- #
 # Empty lists.
 from statistics import mean
+
 list_of_lines = []
 list_of_line_averages = []
 with open("Basics\Class_4-5_13.05-14.05.23\Tasks 14.05.23\numbers.txt") as f:

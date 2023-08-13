@@ -34,7 +34,7 @@ for index, char in enumerate(random_text):
 # Get a text and just assign it to a string variable in the program.
 
 random_text = input("Enter you text here to count the vowels in it: ")
-vowels = ['a', 'e', 'i', 'o', 'u']
+vowels = ["a", "e", "i", "o", "u"]
 vowel_count = 0
 for vowel in vowels:
     vowel_count += random_text.count(vowel)
@@ -101,7 +101,7 @@ else:
 
 user_weight = int(input("Enter your weight(kg): "))
 user_height = float(input("Enter your height(m): "))
-bmi = round(user_weight / user_height ** 2, 2)
+bmi = round(user_weight / user_height**2, 2)
 if bmi <= 18.5:
     print(f"You are underweight with a bmi of {bmi}")
 elif bmi <= 25.0:
@@ -120,23 +120,25 @@ elif bmi > 30:
 user = {}
 
 while True:
-
-    user_input = input("What would you like to do?\n"
-                       "To register a new user, enter REGISTER,\n"
-                       "To display current user, enter DISPLAY.\n"
-                       "To quit the program, enter QUIT. \n")
+    user_input = input(
+        "What would you like to do?\n"
+        "To register a new user, enter REGISTER,\n"
+        "To display current user, enter DISPLAY.\n"
+        "To quit the program, enter QUIT. \n"
+    )
     if user_input.upper() == "REGISTER":
         user["name"] = input("Enter your name: ")
         user["age"] = int(input("Enter your age: "))
         user["city"] = input("Enter your city: ")
-        user["amount_of_potatoes"] = input(
-            "How may potatoes did you eat yesterday?: ")
+        user["amount_of_potatoes"] = input("How may potatoes did you eat yesterday?: ")
         print("Thanks for registering!")
         continue
     elif user_input.upper() == "DISPLAY":
-        print(f"The participant {user.get('name')},"
-              f" aged {user.get('age')} years old,"
-              f" coming from {user.get('city')} have destroyed {user.get('amount_of_potatoes')} potatoes yesterday.")
+        print(
+            f"The participant {user.get('name')},"
+            f" aged {user.get('age')} years old,"
+            f" coming from {user.get('city')} have destroyed {user.get('amount_of_potatoes')} potatoes yesterday."
+        )
     elif user_input.upper() == "QUIT":
         break
     else:

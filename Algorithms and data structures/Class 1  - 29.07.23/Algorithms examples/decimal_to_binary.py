@@ -1,4 +1,3 @@
-
 def dec_to_bin(d):
     while True:
         if d <= 0:

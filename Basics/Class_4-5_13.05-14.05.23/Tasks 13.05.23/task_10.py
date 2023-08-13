@@ -7,6 +7,7 @@
 # current_time = datetime.now().time()
 
 from datetime import datetime
+
 current_time = datetime.now().time()
 
 if int(current_time.strftime("%H%M%S")) in range(60000, 115959):
@@ -19,5 +20,3 @@ elif int(current_time.strftime("%H%M%S")) in range(1, 55959):
     print("It's night.")
 elif int(current_time.strftime("%H%M%S")) in range(210000, 235959):
     print("It's night.")
-
-

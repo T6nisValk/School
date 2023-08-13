@@ -4,6 +4,7 @@
 # Number of even numbers : 5
 # Number of odd numbers : 4
 
+
 def odd_even(*args):
     even_num = 0
     odd_num = 0
@@ -12,8 +13,7 @@ def odd_even(*args):
             even_num += 1
         else:
             odd_num += 1
-    print(f"Number of even numbers: {even_num}\n"
-          f"Number of odd numbers: {odd_num}")
+    print(f"Number of even numbers: {even_num}\n" f"Number of odd numbers: {odd_num}")
 
 
 odd_even(5, 6, 6, 6, 6, 5, 5)

@@ -9,6 +9,7 @@
 # Expected Output:
 # 50, 30
 
+
 def calculation(a, b):
     addition = a + b
     subtraction = a - b

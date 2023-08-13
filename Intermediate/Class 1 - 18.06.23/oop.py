@@ -25,7 +25,7 @@ class Square(FourSidedObjects):
         self.length = length
 
     def area(self):
-        return self.length ** 2
+        return self.length**2
 
     def perimeter(self):
         return self.length * 4

@@ -4,10 +4,11 @@ def process_data(participants):
         all_steps = 0
         for steps in participant[2:]:
             all_steps += int(steps)
-        kilometers = round((int(participant[1])*all_steps)/100000, 2)
+        kilometers = round((int(participant[1]) * all_steps) / 100000, 2)
         if not len(result):
             result.append(
-                {"grade": participant[0], "amount": 1, "kilometers": kilometers})
+                {"grade": participant[0], "amount": 1, "kilometers": kilometers}
+            )
         else:
             is_new = True
 
@@ -16,12 +17,18 @@ def process_data(participants):
                     is_new = False
                     result[index] = {
                         "grade": record["grade"],
-                        "amount": record["amount"]+1,
-                        "kilometers": record["kilometers"] + round(kilometers, 2)}
+                        "amount": record["amount"] + 1,
+                        "kilometers": record["kilometers"] + round(kilometers, 2),
+                    }
 
             if is_new:
                 result.append(
-                    {"grade": participant[0], "amount": 1, "kilometers": round(kilometers, 2)})
+                    {
+                        "grade": participant[0],
+                        "amount": 1,
+                        "kilometers": round(kilometers, 2),
+                    }
+                )
 
     return result
 
@@ -43,5 +50,4 @@ with open("stepsIn.txt") as source:
 
 with open("stepsOUT.txt", "w") as output:
     for line in process_data(participants):
-        output.write(
-            f"{line['grade']} {line['amount']} {line['kilometers']}\n")
+        output.write(f"{line['grade']} {line['amount']} {line['kilometers']}\n")

@@ -8,7 +8,7 @@ print(12345)
 print(1.2345)
 
 # Boolean / Bool
-print(True) # or print(False)
+print(True)  # or print(False)
 
 # Nonetype
 print(None)

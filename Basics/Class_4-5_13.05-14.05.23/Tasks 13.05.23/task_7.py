@@ -14,9 +14,11 @@ def count_letters_and_digits(text):
             letters += 1
         else:
             rest_of_the_stuff += 1
-    print(f"Letters: {letters}\n"
-          f"Digits: {digits}\n"
-          f"Rest of the stuff(spaces, dots, commas, etc.: {rest_of_the_stuff}")
+    print(
+        f"Letters: {letters}\n"
+        f"Digits: {digits}\n"
+        f"Rest of the stuff(spaces, dots, commas, etc.: {rest_of_the_stuff}"
+    )
 
 
 count_letters_and_digits("Python 3.2")

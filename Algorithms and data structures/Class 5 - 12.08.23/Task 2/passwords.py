@@ -10,7 +10,8 @@ with open("source.txt") as source:
     sample_passwords = []
     for _ in range(amount_of_samples):
         sample_passwords.append(source.readline().strip().split())
-    # This compares the check passwords to sample passwords and assigns the absolute difference index
+    # This compares the check passwords to sample
+    # passwords and assigns the absolute difference index
     result = {}
     for password in passwords_to_check:
         absolute_values = {}
@@ -61,7 +62,8 @@ with open("result.txt", "w") as output:
     for index in range(len(passwords_to_check)):
         output.write(
             f"{list(decending_sort)[index]} "
-            f"{sample_password_strengths[decending_sort[''.join(passwords_to_check[index][:1])][index][0]]} "
+            f"{sample_password_strengths[decending_sort[
+                ''.join(passwords_to_check[index][:1])][index][0]]} "
             f"{decending_sort[list(decending_sort)[index]][0][1]}\n")
         for password in valid_sample_passwords[index]:
             output.write(f"{password}\n")

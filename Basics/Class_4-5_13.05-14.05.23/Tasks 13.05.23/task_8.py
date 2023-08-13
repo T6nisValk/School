@@ -6,7 +6,7 @@
 # The dog's age in dog's years is 73
 dog_age_human_years = int(input("Enter dogs age in human years: "))
 dog_age_in_dog_years = 0
-for x in range(1, (dog_age_human_years+1)):
+for x in range(1, (dog_age_human_years + 1)):
     if x <= 2:
         dog_age_in_dog_years += 10.5
     else:

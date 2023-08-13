@@ -2,7 +2,7 @@ import math
 
 
 def circle_area_to_price(radius, price):
-    area = math.pi * radius ** 2
+    area = math.pi * radius**2
     return area / price
 
 

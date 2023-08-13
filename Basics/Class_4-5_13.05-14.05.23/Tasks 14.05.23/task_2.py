@@ -10,8 +10,11 @@ with open("Basics\Class_4-5_13.05-14.05.23\Tasks 14.05.23\eurovision2019.txt") a
         contestants_list.append(contestants)
 
 sorted_contestants_list = sorted(
-    contestants_list, key=lambda votes: votes["Jury Votes"], reverse=True)
+    contestants_list, key=lambda votes: votes["Jury Votes"], reverse=True
+)
 print(f"\033[1;32m Contestants in order by Jury Votes, highest to lowest:")
 for each_contestant in sorted_contestants_list:
-    print(f"\033[1;31m {each_contestant['Country']} - {each_contestant['Artist']} - "
-          f"{each_contestant['Song']} - {each_contestant['Jury Votes']}")
+    print(
+        f"\033[1;31m {each_contestant['Country']} - {each_contestant['Artist']} - "
+        f"{each_contestant['Song']} - {each_contestant['Jury Votes']}"
+    )

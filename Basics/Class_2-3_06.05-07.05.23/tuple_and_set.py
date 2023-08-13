@@ -21,7 +21,9 @@ print("\nAdding multiple values bird, horse to list:", set_2)
 
 # Add the same item again
 set_2.add("mouse")
-print("\nAdds a value mouse that's inside the set already:", set_2)  # It doesn't change anything
+print(
+    "\nAdds a value mouse that's inside the set already:", set_2
+)  # It doesn't change anything
 
 # Remove an item, Python will throw an error if it is not in the set
 set_2.remove("cat")
