@@ -20,8 +20,7 @@ with open("source.txt") as source:
             for index, value in enumerate(sample_password[1:][:-1]):
                 test_password_integer = int(password[1:][index])
                 sample_password_integer = int(value)
-                absolute_value = abs(
-                    test_password_integer-sample_password_integer)
+                absolute_value = abs(test_password_integer - sample_password_integer)
                 absolute_indexes.append(absolute_value)
             absolute_values[sample_password[0]] = sum(absolute_indexes)
 
@@ -34,7 +33,10 @@ with open("source.txt") as source:
     end_result = {}
     for test_key, passwords in sorted_result.items():
         result = []
-        for sample_index, password, in enumerate(passwords):
+        for (
+            sample_index,
+            password,
+        ) in enumerate(passwords):
             if sample_index == 0:
                 first_value = passwords[0][1]
                 result.append(password)
@@ -47,8 +49,9 @@ with open("source.txt") as source:
     # This sorts the values by sample password length, longest to shortest.
     decending_sort = {}
     for key, value in end_result.items():
-        decending_sort[key] = list(sorted(
-            value.items(), key=lambda x: len(x[0]), reverse=True))
+        decending_sort[key] = list(
+            sorted(value.items(), key=lambda x: len(x[0]), reverse=True)
+        )
     # This is to access the strength of a sample password.
     sample_password_strengths = {}
     for values in sample_passwords:
@@ -62,8 +65,8 @@ with open("result.txt", "w") as output:
     for index in range(len(passwords_to_check)):
         output.write(
             f"{list(decending_sort)[index]} "
-            f"{sample_password_strengths[decending_sort[
-                ''.join(passwords_to_check[index][:1])][index][0]]} "
-            f"{decending_sort[list(decending_sort)[index]][0][1]}\n")
+            f"{sample_password_strengths[decending_sort[''.join(passwords_to_check[index][:1])][index][0]]} "
+            f"{decending_sort[list(decending_sort)[index]][0][1]}\n"
+        )
         for password in valid_sample_passwords[index]:
             output.write(f"{password}\n")
