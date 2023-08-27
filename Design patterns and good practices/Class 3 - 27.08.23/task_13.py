@@ -1,3 +1,8 @@
+# Topic: Serialization Task: Build a program that stores
+# a dictionary of user information (name, age, email) in a JSON file.
+# Allow the user to add or update information. Implement serialization
+# and deserialization for reading and writing the JSON file.
+
 import json
 
 
