@@ -30,7 +30,8 @@ def show_users():
             if not data:
                 print("No users.")
             else:
-                print(data)
+                for user in data:
+                    print(f"{user}: {data[user]}")
     except json.decoder.JSONDecodeError:
         print("No users.")
 
