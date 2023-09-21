@@ -1,0 +1,150 @@
+import os
+import pandas as pd
+from datetime import datetime
+import tkinter as tk
+from tkinter import StringVar, messagebox
+import threading
+
+
+
+def process_data(week):
+    try:
+        export_path = "L:\\SPI\\L6AutoExport"
+        entry.delete(0, 100)
+        output = []
+        old_data = pd.read_excel(f"L:\\SPI\\L6Processed\\processed.xlsx", engine="openpyxl", sheet_name="Weekly Summary")
+        output.append(old_data)
+        for item in old_data["date"]:
+            values = item.split("-")
+            if week == values[1]:
+                label_fol.set("Week already processed.")
+                root.update()
+                return
+        for product in os.listdir(export_path):
+            label_fol.set(f"Checking folder {product}...")
+            root.update()
+            df_summary = pd.DataFrame()
+            count_product = 0
+            count_result = 0
+            insufficient = 0
+            excessive = 0
+            bridge = 0
+            height_high = 0
+            height_low = 0
+            area_large = 0
+            area_small = 0
+            shape_error = 0
+            offset_x = 0
+            offset_y = 0
+
+            path_folder = os.path.join(export_path, product)
+
+            for data in os.listdir(path_folder):
+                    path_file = os.path.join(path_folder, data)
+                    file_time = os.path.getctime(path_file)
+                    dt_file = datetime.fromtimestamp(file_time)
+                    file_week = dt_file.strftime("%U")
+
+                    if file_week == week:
+                        if data.strip().lower().startswith("no_code"):
+                            label_fil.set(f"Processing file {data}...")
+                            root.update()
+                            df = pd.read_csv(path_file)
+                            date = df.iloc[0, 2]
+                            result = df.iloc[0, 6]
+                            insufficient_data = df.iloc[7, 2]
+                            insufficient += int(insufficient_data)
+                            excessive_data = df.iloc[7, 3]
+                            excessive += int(excessive_data)
+                            bridge_data = df.iloc[7, 4]
+                            bridge += int(bridge_data)
+                            height_high_data = df.iloc[7, 5]
+                            height_high += int(height_high_data)
+                            height_low_data = df.iloc[7, 6]
+                            height_low += int(height_low_data)
+                            area_large_data = df.iloc[7, 7]
+                            area_large += int(area_large_data)
+                            area_small_data = df.iloc[7, 8]
+                            area_small += int(area_small_data)
+                            shape_error_data = df.iloc[7, 9]
+                            shape_error += int(shape_error_data)
+                            offset_x_data = df.iloc[7, 15]
+                            offset_x += int(offset_x_data)
+                            offset_y_data = df.iloc[7, 16]
+                            offset_y += int(offset_y_data)
+                            date_object = datetime.strptime(date, "%Y-%m-%d")
+                            year = date_object.year
+                            week_number = date_object.strftime("%U")
+                            year_week = f"{year}-{week_number}"
+                            if result == "GOOD" or result == "WARNING":
+                                count_result += 1
+                            count_product += 1
+            label_fil.set("")
+            root.update()
+
+            if count_product > 0: 
+                    yield_percentage = (count_result / count_product)
+                    df_summary = pd.DataFrame({
+                        "product": [product],
+                        "date": [year_week],
+                        "PCB count": [count_product],
+                        "result count": [count_result],
+                        "yield": [yield_percentage],
+                        "insufficient": [insufficient],
+                        "excessive": [excessive],
+                        "bridge": [bridge],
+                        "height high": [height_high],
+                        "height low": [height_low],
+                        "area large": [area_large],
+                        "area low": [area_small],
+                        "shape error": [shape_error],
+                        "offset x": [offset_x],
+                        "offset y": [offset_y]
+                    })
+            else:
+                    continue
+            output.append(df_summary)
+        label_fol.set("")
+        root.update()    
+        if output:
+            combined = pd.concat(output, ignore_index=True)
+            combined = combined.sort_values(by="date")
+            combined.to_excel(f"L:\\SPI\\L6Processed\\processed.xlsx", engine="openpyxl", sheet_name="Weekly Summary", index=False)
+            label_fol.set("Processing done.")
+            root.update()
+        else:
+            label_fol.set(f"No files with week {week}")
+            root.update()
+    except FileNotFoundError:
+         messagebox.showerror(title="Error", message="File not found.\nCheck drive connection.")
+def refresh(week):
+     threading.Thread(target=process_data, args=(week,)).start()
+
+def destroy_program():
+     root.destroy()
+
+root = tk.Tk()
+label_fil = StringVar()
+label_fol = StringVar()
+root.geometry("300x150")
+root.title("SPI Data Processor")
+
+label_info = tk.Label(root, text="Enter week:")
+label_info.pack(pady=10)
+
+button_entry_frame = tk.Frame(root)
+button_entry_frame.pack()
+
+entry = tk.Entry(button_entry_frame, width=30)
+entry.grid(row=0, column=0)
+button = tk.Button(button_entry_frame, text="OK", command=lambda: refresh(entry.get()))
+button.grid(row=0, column=1)
+button_exit = tk.Button(button_entry_frame, text="Exit", command=lambda: destroy_program())
+button_exit.grid(row=0, column=2)
+
+label_folder = tk.Label(root, textvariable=label_fol)
+label_folder.pack(pady=10)
+label_file = tk.Label(root, textvariable=label_fil)
+label_file.pack()
+
+root.mainloop()
